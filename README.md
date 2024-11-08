@@ -17,7 +17,7 @@
 ## Страх перед именем усиливает страх перед тем, кто его носит. — Гермиона Грейнджер
 
 web6405kapkaevaao/images/1.jpg
-<img src="https://github.com/akapkaeva21/web6405kapkaevaao/images/1.jpg" alt="Альтернативный текст" width="500"/>
+<img src="https://github.com/akapkaeva21/web6405kapkaevaao/main/images/1.jpg" alt="Альтернативный текст" width="500"/>
 
 
 #Только сели за лабу
