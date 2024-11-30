@@ -1,15 +1,13 @@
 /**
- * Проверяет, является ли число целым, используя побитовые операторы
+ * Напишите функцию, которая проверяет, является ли число целым используя побитовые операторы
  * @param {*} n
- * @returns {boolean}
  */
 function isInteger(n) {
     return (n | 0) === n;
 }
 
 /**
- * Возвращает массив четных чисел от 2 до 20 включительно
- * @returns {number[]}
+ * Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
  */
 function even() {
     const evens = [];
@@ -20,9 +18,8 @@ function even() {
 }
 
 /**
- * Считает сумму чисел до заданного используя цикл
+ * Напишите функцию, считающую сумму чисел до заданного используя цикл
  * @param {*} n
- * @returns {number}
  */
 function sumTo(n) {
     let sum = 0;
@@ -33,9 +30,8 @@ function sumTo(n) {
 }
 
 /**
- * Считает сумму чисел до заданного используя рекурсию
+ * Напишите функцию, считающую сумму чисел до заданного используя рекурсию
  * @param {*} n
- * @returns {number}
  */
 function recSumTo(n) {
     if (n === 1) return 1;
@@ -43,28 +39,26 @@ function recSumTo(n) {
 }
 
 /**
- * Считает факториал заданного числа
+ * Напишите функцию, считающую факториал заданного числа
  * @param {*} n
- * @returns {number}
  */
 function factorial(n) {
-    if (n <= 1) return 1;
+    if (n < 0) return 0;
+    if (n === 0 || n===1 ) return 1;
     return n * factorial(n - 1);
 }
 
 /**
- * Определяет, является ли число двойкой, возведенной в степень
+ * Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
  * @param {*} n
- * @returns {boolean}
  */
 function isBinary(n) {
     return n > 0 && (n & (n - 1)) === 0;
 }
 
 /**
- * Находит N-е число Фибоначчи
+ * Напишите функцию, которая находит N-е число Фибоначчи
  * @param {*} n
- * @returns {number}
  */
 function fibonacci(n) {
     if (n <= 0) return 0;
@@ -72,12 +66,17 @@ function fibonacci(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-/**
- * Возвращает функцию, выполняющую заданную операцию с начальным значением
+/** Напишите функцию, которая принимает начальное значение и функцию операции
+ * и возвращает функцию - выполняющую эту операцию.
+ * Если функция операции (operatorFn) не задана - по умолчанию всегда
+ * возвращается начальное значение (initialValue)
  * @param initialValue
- * @param operatorFn - (storedValue, newValue) => {operation}
- * @returns {function}
- */
+ * @param operatorFn - (storedValue, newValue) => {operation}  // ошибка
+ * @example*/
+const sumFn =  getOperationFn(10, (a,b) => a + b);
+console.log((sumFn(5)) - 15);
+console.log((sumFn(3)) - 18);
+
 function getOperationFn(initialValue, operatorFn = () => initialValue) {
     let currentValue = initialValue;
     return function(newValue) {
@@ -87,11 +86,21 @@ function getOperationFn(initialValue, operatorFn = () => initialValue) {
 }
 
 /**
- * Создает генератор арифметической последовательности
+ * Напишите функцию создания генератора арифметической последовательности.
+ * При ее вызове, она возвращает новую функцию генератор - generator().
+ * Каждый вызов функции генератора возвращает следующий элемент последовательности.
+ * Если начальное значение не передано, то оно равно 0.
+ * Если шаг не указан, то по дефолту он равен 1.
+ * Генераторов можно создать сколько угодно - они все независимые.
+ *
  * @param {number} start - число с которого начинается последовательность
- * @param {number} step - число шаг последовательности
- * @returns {function}
- */
+ * @param {number} step  - число шаг последовательности
+ * @example */
+ const generator = sequence(5, 2);
+ console.log(generator()); // 5
+ console.log(generator()); // 7
+ console.log(generator()); // 9
+
 function sequence(start = 0, step = 1) {
     let current = start;
     return function() {
@@ -102,11 +111,19 @@ function sequence(start = 0, step = 1) {
 }
 
 /**
- * Сравнивает два значения на равенство с учетом вложенных объектов
+ * Напишите функцию deepEqual, которая принимает два значения
+ * и возвращает true только в том случае, если они имеют одинаковое значение
+ * или являются объектами с одинаковыми свойствами,
+ * значения которых также равны при сравнении с рекурсивным вызовом deepEqual.
+ * Учитывать специфичные объекты(такие как Date, RegExp и т.п.) не обязательно
+ *
  * @param {object} firstObject - первый объект
  * @param {object} secondObject - второй объект
- * @returns {boolean}
- */
+ * @returns {boolean} - true если объекты равны(по содержанию) иначе false
+ * @example */
+ console.log(deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'})) // true
+ console.log(deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'})) // false
+
 function deepEqual(firstObject, secondObject) {
     if (firstObject === secondObject) return true;
 
