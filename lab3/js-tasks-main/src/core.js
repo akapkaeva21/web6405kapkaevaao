@@ -74,8 +74,8 @@ function fibonacci(n) {
  * @param operatorFn - (storedValue, newValue) => {operation}  // ошибка
  * @example*/
 const sumFn =  getOperationFn(10, (a,b) => a + b);
-console.log((sumFn(5)) - 15);
-console.log((sumFn(3)) - 18);
+console.log((sumFn(5))); // 15
+console.log((sumFn(3))); // 13
 
 function getOperationFn(initialValue, operatorFn = () => initialValue) {
     let currentValue = initialValue;
