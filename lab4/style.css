@@ -199,8 +199,47 @@ footer {
   text-align: left;
 }
 
+.team h2{
+  text-align: center;
+  margin-left: 35px;
+  margin-top: 50px;
+}
 
-/* Стилизация страницы команды */
+.member-container {
+  display: grid; /* Устанавливаем контейнер как грид */
+  grid-template-columns: repeat(3, 1fr); /* Создаем три равные колонки */
+  grid-template-rows: auto; /* Высота строк автоматически подстраивается под содержимое */
+  gap: 20px; /* Задаем отступы между элементами сетки */
+}
+
+.member {
+  grid-column: span 1; /* Элемент занимает одну колонку */
+  grid-row: span 1; /* Элемент занимает одну строку */
+  background-color: rgba(95, 129, 98, 0.37); /* Цвет фона для визуализации */
+  padding: 20px; /* Отступы внутри элемента */
+  margin: 25px;
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 5%;
+}
+
+
+.member-info {
+  text-align: left; /* Центрируем текст внутри блока информации */
+}
+
+.member img {
+  width: 300px; /* Фиксированная ширина изображения */
+  height: 300px; /* Фиксированная высота изображения */
+  object-fit: cover; /* Обеспечивает сохранение пропорций и заполнение области */
+  border-radius: 50%; /* Круглые изображения */
+}
+
+.member h3, .member p {
+  margin: 20px;
+  text-align: left;
+}
+
+/* Стилизация страницы команды
 .team .member {
   display: inline-block;
   vertical-align: top;
