@@ -3,7 +3,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 10;
   font-size: 18px;
-  background-color: #f0f0f0;
+  background-color: rgba(247, 240, 253, 0.51);
   margin: 0;
   padding: 0;
 }
@@ -15,8 +15,9 @@ body {
 }
 
 header {
-  background-color: #e6e6ff;
+  background-color: rgba(97, 77, 117, 0.55);
   padding: 10px 0;
+  font-size: 115%;
 }
 
 nav ul {
@@ -88,50 +89,10 @@ footer {
 }
 
 
-/*.about-us {
-  background-color: #e6e6ff;
-  padding: 40px 0;
-  text-align: left;
-}
-
-.about-us h2 {
-  font-family: "Raleway", sans-serif;
-  font-weight: 10;
-  margin-bottom: 20px;
-}
-
-.about-us p {
-  margin-bottom: 75px;
-}
-
-.services table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.services th{
-  background-color: #907CA2D6;
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-}
-
-.services td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
-
-.services td:nth-child(3) {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: right;
-}*/
-
-
 .about-us {
-  background-color: #e6e6ff;
+  background-color: rgba(211, 201, 218, 0.77);
   padding: 40px 0;
+  text-align: left;
 }
 
 .about-us h2 {
@@ -144,6 +105,7 @@ footer {
 
 .about-us p {
   margin-bottom: 75px;
+  padding-left: 40px;
 }
 
 
@@ -154,15 +116,21 @@ footer {
   overflow: hidden;
   height: 700px;
   padding-bottom: 75px;
+
 }
 
 .service-item {
   position: relative;
-  background-color: #fff;
+  background-color: rgba(187, 168, 190, 0.44);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.service-item:hover {
+  color: #007BFF; /* Новый цвет текста при наведении */
 }
 
 .service-image {
@@ -186,17 +154,20 @@ footer {
 
 .service-content h3 {
   margin-top: 10px;
+  font-size: 150%;
 }
 
 .service-content p {
   margin-top: 10px;
   position: relative;
   padding-right: 40px;
+  margin-bottom: 20px;
 }
 
 .service-content span {
   display: block;
   text-align: left;
+  padding-bottom: 20px;
 }
 
 .team h2{
@@ -207,31 +178,37 @@ footer {
 
 .member-container {
   display: grid; /* Устанавливаем контейнер как грид */
-  grid-template-columns: repeat(3, 1fr); /* Создаем три равные колонки */
-  grid-template-rows: auto; /* Высота строк автоматически подстраивается под содержимое */
-  gap: 20px; /* Задаем отступы между элементами сетки */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
 }
 
 .member {
-  grid-column: span 1; /* Элемент занимает одну колонку */
-  grid-row: span 1; /* Элемент занимает одну строку */
-  background-color: rgba(95, 129, 98, 0.37); /* Цвет фона для визуализации */
-  padding: 20px; /* Отступы внутри элемента */
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: rgba(95, 129, 98, 0.37);
+  padding: 20px;
   margin: 25px;
-  text-align: center; /* Выравнивание текста по центру */
+  text-align: center;
   border-radius: 5%;
+  transition: background-color 0.3s ease; /* переход цвета фона */
 }
 
 
+
+.member:hover {
+  background-color: #614D756B; /* меняется цвет фона при наведении */
+}
+
 .member-info {
-  text-align: left; /* Центрируем текст внутри блока информации */
+  text-align: left;
 }
 
 .member img {
-  width: 300px; /* Фиксированная ширина изображения */
-  height: 300px; /* Фиксированная высота изображения */
-  object-fit: cover; /* Обеспечивает сохранение пропорций и заполнение области */
-  border-radius: 50%; /* Круглые изображения */
+  width: 275px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .member h3, .member p {
@@ -239,30 +216,29 @@ footer {
   text-align: left;
 }
 
-/* Стилизация страницы команды
-.team .member {
-  display: inline-block;
-  vertical-align: top;
-  width: 33%;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
+
+.contact h2 {
+  margin: 35px 0 10px 50px;
+  text-align: left;
+
 }
 
-.team img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.team h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-/* Стилизация страницы контактов */
 .contact p {
-  margin-bottom: 10px;
+  margin: 15px 0 10px 50px;
+  text-align: left;
+
 }
 
+.map-responsive {
+  padding-top: 56.25%;
+  position: relative;
+  margin: 25px 25px 25px 50px;
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 50%;
+}
