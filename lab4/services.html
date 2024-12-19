@@ -1,3 +1,66 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Наши услуги</title>-->
+<!--  <link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  <nav>-->
+<!--    <ul class="nav-list">-->
+<!--      <li><a href="index.html">Главная</a></li>-->
+<!--      <li><a href="services.html">Услуги</a></li>-->
+<!--      <li><a href="team.html">Команда</a></li>-->
+<!--      <li><a href="contacts.html">Контакты</a></li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+<!--</header>-->
+
+<!--<main>-->
+<!--  <section class="body">-->
+<!--    <div class="container">-->
+<!--      <h2>Наши услуги</h2>-->
+<!--      <div class="services">-->
+<!--        <div class="service-item">-->
+<!--          <img src="images/diagnos.jpg" alt="Диагностика зрения" class="service-image">-->
+<!--          <div class="service-content" >-->
+<!--            <h3>Диагностика зрения</h3>-->
+<!--            <p>Комплексная проверка зрения с использованием Искусственного интеллекта</p>-->
+<!--            <span>2000 руб.</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="service-item">-->
+<!--          <img src="images/ai.jpg" alt="Диагностика зрения" class="service-image">-->
+<!--          <div class="service-content" >-->
+<!--            <h3>Лечение катаракты</h3>-->
+<!--            <p>Хирургическое вмешательство под контролем ИИ</p>-->
+<!--            <span>от 50000 руб.</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="service-item">-->
+<!--          <img src="images/aihealth.jpg" alt="Диагностика зрения" class="service-image">-->
+<!--          <div class="service-content" >-->
+<!--            <h3>Коррекция зрения</h3>-->
+<!--            <p>Лазерная коррекция зрения</p>-->
+<!--            <span>от 30000 руб.</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--</main>-->
+
+<!--<footer>-->
+<!--  <p>© Частная офтальмологическая консультация с ИИ | New vision | Все права защищены</p>-->
+<!--</footer>-->
+
+<!--</body>-->
+<!--</html>-->
+<!--*/-->
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -18,6 +81,45 @@
   </nav>
 </header>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Документ загружен и готов к работе!');
+  });
+  // Проверка введённых данных и отправка формы
+  document.getElementById('serviceForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Отменяем стандартное поведение формы
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    // Простейшая проверка данных
+    if (name.trim() === '' || email.trim() === '') {
+      alert('Пожалуйста, заполните все поля.');
+      return;
+    }
+
+    // Отправка POST-запроса (без обработки на сервере)
+    console.log('Отправка данных:', { name, email });
+
+    // Асинхронный запрос для получения данных
+    fetch('http://localhost:63342/web6405kapkaevaao/lab4/services.html') // Замените на ваш URL
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Сетевая ошибка: ' + response.status);
+              }
+              return response.json();
+            })
+            .then(data => {
+              // Обработка полученных данных
+              document.getElementById('dataDisplay').innerHTML = JSON.stringify(data);
+            })
+            .catch(error => {
+              console.error('Ошибка при получении данных:', error);
+              alert('Произошла ошибка при получении данных. Попробуйте позже.');
+            });
+  });
+</script>
+
 <main>
   <section class="body">
     <div class="container">
@@ -32,7 +134,7 @@
           </div>
         </div>
         <div class="service-item">
-          <img src="images/ai.jpg" alt="Диагностика зрения" class="service-image">
+          <img src="images/ai.jpg" alt="Лечение катаракты" class="service-image">
           <div class="service-content" >
             <h3>Лечение катаракты</h3>
             <p>Хирургическое вмешательство под контролем ИИ</p>
@@ -40,7 +142,7 @@
           </div>
         </div>
         <div class="service-item">
-          <img src="images/aihealth.jpg" alt="Диагностика зрения" class="service-image">
+          <img src="images/aihealth.jpg" alt="Коррекция зрения" class="service-image">
           <div class="service-content" >
             <h3>Коррекция зрения</h3>
             <p>Лазерная коррекция зрения</p>
@@ -48,6 +150,21 @@
           </div>
         </div>
       </div>
+
+      <!-- Форма для отправки данных -->
+      <form id="serviceForm">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Отправить запрос</button>
+      </form>
+
+      <!-- Блок для отображения данных -->
+      <div id="dataDisplay"></div>
+
     </div>
   </section>
 </main>
@@ -55,6 +172,7 @@
 <footer>
   <p>© Частная офтальмологическая консультация с ИИ | New vision | Все права защищены</p>
 </footer>
+
 
 </body>
 </html>
