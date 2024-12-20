@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наши услуги</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="services.html">Услуги</a></li>
+      <li><a href="team.html">Команда</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="form-container">
+  <form id="serviceForm" action="http://localhost:3000/services" method="POST">
+    <h1>Оставьте заявку и наш консультант перезвонит Вам!</h1>
+    <label for="name">Ваше имя:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Ваш email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Отправить запрос</button>
+  </form>
+</div>
+
+<script src="services.js"></script> <!-- Подключение JavaScript файла -->
+
+<div id="dataDisplay"></div>
+
+<main>
+  <section class="body">
+    <div class="container">
+      <div class="services">
+        <h2>Наши услуги</h2>
+        <div class="service-item">
+          <img src="images/diagnos.jpg" alt="Диагностика зрения" class="service-image">
+          <div class="service-content">
+            <h3>Диагностика зрения</h3>
+            <p>Комплексная проверка зрения с использованием Искусственного интеллекта</p>
+            <span>2000 руб.</span>
+          </div>
+        </div>
+        <div class="service-item">
+          <img src="images/ai.jpg" alt="Лечение катаракты" class="service-image">
+          <div class="service-content">
+            <h3>Лечение катаракты</h3>
+            <p>Хирургическое вмешательство под контролем ИИ</p>
+            <span>от 50000 руб.</span>
+          </div>
+        </div>
+        <div class="service-item">
+          <img src="images/aihealth.jpg" alt="Коррекция зрения" class="service-image">
+          <div class="service-content">
+            <h3>Коррекция зрения</h3>
+            <p>Лазерная коррекция зрения</p>
+            <span>от 30000 руб.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<table id="servicesTable" class="tab">
+  <thead>
+  <tr>
+    <th>Имя</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<footer>
+  <p>© Частная офтальмологическая консультация с ИИ | New vision | Все права защищены</p>
+</footer>
+
+
+</body>
+</html>
