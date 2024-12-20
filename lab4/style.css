@@ -335,35 +335,28 @@ form button:hover {
   margin-top: 20px;
 }
 
-.tab{
-  margin-bottom: 200px;
-}
-
-.table-title {
-  text-align: center;
-  margin-top: 20px;
-}
-
 /* Стили для таблицы */
 #servicesTable {
-  width: 50%;
-  border-collapse: collapse;
-  margin-left: 635px;
+  width: 80%;
+  margin: 0 auto 150px;
+  border-collapse: collapse; /* Убираем двойные границы между ячейками */
+}
 
+#servicesTable th, #servicesTable td {
+  text-align: center; /* Центрирование текста в заголовках и ячейках */
+  padding: 15px;
+  border: 1px solid rgba(97, 77, 117, 0.55); /* Рамка для ячеек */
 }
 
 #servicesTable th {
-  background-color: rgba(97, 77, 117, 0.55);
-  color: white;
-  padding: 10px;
-
+  background-color: rgba(97, 77, 117, 0.55); /* Цвет фона заголовков */
+  color: white; /* Цвет текста заголовков */
 }
 
 #servicesTable td {
-  background-color: #70969096;
-  color: white;
-  padding: 10px;
-
+  background-color: #70969096; /* Цвет фона ячеек с данными */
+  color: white; /* Цвет текста ячеек с данными */
 }
+
 
 
