@@ -42,6 +42,45 @@ footer {
 }
 
 /* Стилизация главной страницы */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Анимация для кнопки */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(58, 82, 57, 0.63);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  font-size: 150%;
+}
+
+
 .hero {
   background-color: #fff;
   padding: 50px 0;
@@ -51,7 +90,7 @@ footer {
 .hero h1 {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  color: #0a645b;
+  color: #3a5239;
   margin-bottom: 25px;
 }
 
@@ -104,7 +143,7 @@ footer {
 }
 
 .about-us p {
-  margin-bottom: 75px;
+  margin-bottom: 30px;
   padding-left: 40px;
 }
 
@@ -116,7 +155,6 @@ footer {
   overflow: hidden;
   height: 700px;
   padding-bottom: 75px;
-
 }
 
 .service-item {
@@ -244,17 +282,25 @@ footer {
 }
 
 
+.form-container {
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  height: 20%; /* Занимаем всю высоту экрана */
+}
 
+.form-container h1 {
+  font-size: 125%;
+}
 
-
-/*///////////////////////////////*/
-
+/* Стили для формы */
 form {
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgb(89, 61, 121);
   padding: 20px;
-  margin-top: 30px;
+  margin: 45px 20px 0 20px;
+  width: 35%; /* Ширина формы */
 }
 
 form label {
@@ -272,7 +318,7 @@ form input[type="email"] {
 }
 
 form button {
-  background-color: #35424a;
+  background-color: rgba(65, 42, 66, 0.85);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -281,11 +327,12 @@ form button {
 }
 
 form button:hover {
-  background-color: #455a64; /* Более светлый оттенок при наведении */
+  background-color: rgba(42, 66, 43, 0.51); /* Более светлый оттенок при наведении */
 }
 
 /* Стили для блока отображения данных */
 #dataDisplay {
   margin-top: 20px;
 }
+
 
