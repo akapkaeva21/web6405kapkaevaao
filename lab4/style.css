@@ -330,9 +330,40 @@ form button:hover {
   background-color: rgba(42, 66, 43, 0.51); /* Более светлый оттенок при наведении */
 }
 
-/* Стили для блока отображения данных */
+
 #dataDisplay {
   margin-top: 20px;
+}
+
+.tab{
+  margin-bottom: 200px;
+}
+
+.table-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Стили для таблицы */
+#servicesTable {
+  width: 50%;
+  border-collapse: collapse;
+  margin-left: 635px;
+
+}
+
+#servicesTable th {
+  background-color: rgba(97, 77, 117, 0.55);
+  color: white;
+  padding: 10px;
+
+}
+
+#servicesTable td {
+  background-color: #70969096;
+  color: white;
+  padding: 10px;
+
 }
 
 

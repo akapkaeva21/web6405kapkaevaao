@@ -1,14 +1,9 @@
-[
-  {
-    "name": "Иван Иванов",
-    "email": "ivan@example.com"
-  },
-  {
-    "name": "Мария Петрова",
-    "email": "maria@example.com"
-  },
-  {
-    "name": "Алексей Смирнов",
-    "email": "alexey@example.com"
-  }
-]
+{
+  "services": [
+    {
+      "id": "0334",
+      "name": "проверка",
+      "email": "mathswin1@gmail.com"
+    }
+  ]
+}
